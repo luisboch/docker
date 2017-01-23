@@ -1,10 +1,11 @@
 FROM luisboch/phalcon1:latest
 MAINTAINER luisboch <luis.c.boch@gmail.com>
 
-ADD phalcon /var/www/phalcon
+RUN rm -rf /var/www/phalcon/ && rm -rf /var/www/html/
+ADD phalcon /var/www/phalcon/
 ADD index.html /var/www/
 
-#RUN mkdir -p /var/www/volt-temp-files && mkdir -p /var/www/phalcon/logs && /var/www/phalcon/public/img/featured && mkdir -p /var/www/phalcon/public/uploads
+RUN mkdir -p /var/www/volt-temp-files
 
 
 EXPOSE 80
